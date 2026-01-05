@@ -1,0 +1,149 @@
+import React, { useState, useEffect } from 'react';
+import { Button } from './Button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { SmartImage } from './SmartImage';
+
+const HERO_SLIDES = [
+  {
+    id: 1,
+    localSrc: 'hero-slide-1.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Main Bar Atmosphere'
+  },
+  {
+    id: 2,
+    localSrc: 'hero-slide-2.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Crowded Event Space'
+  },
+  {
+    id: 3,
+    localSrc: 'hero-slide-3.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Cocktail Detail'
+  },
+  {
+    id: 4,
+    localSrc: 'hero-slide-4.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Interior Architecture'
+  },
+  {
+    id: 5,
+    localSrc: 'hero-slide-5.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Celebration Toast'
+  }
+];
+
+export const Hero: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-advance
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  };
+
+  return (
+    <section
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-stone-900 group/hero"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Slides */}
+      <div className="absolute inset-0 z-0">
+        {HERO_SLIDES.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
+          >
+            <SmartImage
+              localSrc={slide.localSrc}
+              fallbackSrc={slide.fallbackSrc}
+              alt={slide.alt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30 pointer-events-none"></div>
+      </div>
+
+      {/* Carousel Controls - Only visible on hover */}
+      <button
+        onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/30 hover:text-white hover:bg-black/20 hover:backdrop-blur-sm p-3 rounded-full transition-all duration-300 opacity-0 group-hover/hero:opacity-100 hidden md:block"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={40} />
+      </button>
+
+      <button
+        onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/30 hover:text-white hover:bg-black/20 hover:backdrop-blur-sm p-3 rounded-full transition-all duration-300 opacity-0 group-hover/hero:opacity-100 hidden md:block"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={40} />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-4">
+        {HERO_SLIDES.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={(e) => { e.stopPropagation(); setCurrentSlide(idx); }}
+            className={`transition-all duration-500 rounded-full border border-white/20 ${
+              idx === currentSlide ? 'bg-gold-500 w-12 h-2 border-none' : 'bg-transparent hover:bg-white/30 w-2 h-2'
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-30 text-center px-4 max-w-4xl mx-auto mt-20 pointer-events-none select-none">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight pointer-events-auto drop-shadow-2xl">
+          Built For <br/>The Buyout.
+        </h1>
+        <p className="text-stone-200 text-lg md:text-xl font-light tracking-wide mb-10 max-w-2xl mx-auto pointer-events-auto drop-shadow-lg">
+          The ultimate turnkey venue for SF corporate events.
+        </p>
+
+        {/* Stats */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 mb-12 text-gold-500 font-serif text-xl md:text-2xl italic pointer-events-auto drop-shadow-md">
+          <span>250 Guests</span>
+          <span className="hidden md:block w-2 h-2 rounded-full bg-white/30"></span>
+          <span>140-Foot Bar</span>
+        </div>
+
+        {/* Actions */}
+        <div className="flex flex-col md:flex-row gap-4 justify-center pointer-events-auto">
+          <Button onClick={() => document.getElementById('inquire')?.scrollIntoView()}>INQUIRE</Button>
+          <Button variant="outline" onClick={() => document.getElementById('spaces')?.scrollIntoView()}>VIEW SPACES</Button>
+        </div>
+      </div>
+
+      {/* Helpful Hint for User */}
+      <div className={`absolute top-24 right-6 z-40 transition-opacity duration-300 ${isPaused ? 'opacity-100' : 'opacity-0'} pointer-events-none`}>
+         <div className="bg-stone-950/80 backdrop-blur text-stone-400 text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-stone-800 shadow-xl">
+            Slide {currentSlide + 1} / {HERO_SLIDES.length} • Click background to change image
+         </div>
+      </div>
+    </section>
+  );
+};
