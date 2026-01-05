@@ -7,8 +7,7 @@ export const Capabilities: React.FC = () => {
     <section id="spaces" className="py-24 bg-stone-900 text-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
 
-        <div className="text-center mb-20">
-          <h4 className="text-gold-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">The Venue</h4>
+        <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-6xl font-bold">Event Capabilities</h2>
         </div>
 

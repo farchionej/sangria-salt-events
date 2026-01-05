@@ -106,12 +106,6 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Helpful Hint for User */}
-      <div className={`absolute top-24 right-6 z-40 transition-opacity duration-300 ${isPaused ? 'opacity-100' : 'opacity-0'} pointer-events-none`}>
-         <div className="bg-stone-950/80 backdrop-blur text-stone-400 text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-stone-800 shadow-xl">
-            Slide {currentSlide + 1} / {HERO_SLIDES.length} • Click background to change image
-         </div>
-      </div>
     </section>
   );
 };

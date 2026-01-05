@@ -8,7 +8,6 @@ export const History: React.FC = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl mb-10">
-          <h4 className="text-sangria-900 font-bold tracking-[0.2em] uppercase text-sm mb-4">The History</h4>
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">
             Don't rent a room. <br/>
             <span className="italic text-stone-500">Rent a piece of Mission history.</span>
