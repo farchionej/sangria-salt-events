@@ -49,8 +49,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="tel:+14155550123" className="hover:text-white transition-colors">
-                  (415) 555-0123
+                <a href="tel:+14158241502" className="hover:text-white transition-colors">
+                  (415) 824-1502
                 </a>
               </li>
             </ul>
