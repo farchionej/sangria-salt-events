@@ -13,9 +13,7 @@ export const History: React.FC = () => {
             <span className="italic text-stone-500">Rent a piece of Mission history.</span>
           </h2>
           <p className="text-lg text-stone-600 leading-relaxed">
-            The location at 2327 Mission Street is not merely a restaurant space; it is a cultural landmark.
-            For over 80 years, this address has served as a primary social hub, evolving from a
-            working-class Irish pub to the definitive Latin-Caribbean party spot.
+            We've stripped back the clutter to reveal the good bones of the legacy bar and restaurant —specifically the massive 140-foot mahogany bar. We combine the historic grit with chef-driven tapas and elevated service.
           </p>
         </div>
 
