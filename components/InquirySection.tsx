@@ -293,7 +293,7 @@ export const InquirySection: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <span>Send Inquiry</span>
+                        <span>Party With Us</span>
                         <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
@@ -313,8 +313,8 @@ export const InquirySection: React.FC = () => {
           <div className="mt-12 text-center">
             <p className="text-stone-500 text-sm">
               Prefer to talk? Call us at{' '}
-              <a href="tel:+14155550123" className="text-gold-500 hover:text-gold-400 transition-colors">
-                (415) 555-0123
+              <a href="tel:+14158241502" className="text-gold-500 hover:text-gold-400 transition-colors">
+                (415) 824-1502
               </a>
               {' '}or email{' '}
               <a href="mailto:events@sangriaandsalt.com" className="text-gold-500 hover:text-gold-400 transition-colors">

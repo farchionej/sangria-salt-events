@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
 
         {/* Actions */}
         <div className="flex flex-col md:flex-row gap-4 justify-center pointer-events-auto">
-          <Button onClick={() => document.getElementById('inquire')?.scrollIntoView()}>INQUIRE</Button>
+          <Button onClick={() => document.getElementById('inquire')?.scrollIntoView({ behavior: 'smooth' })}>INQUIRE</Button>
           <Button variant="outline" onClick={() => document.getElementById('spaces')?.scrollIntoView()}>VIEW SPACES</Button>
         </div>
       </div>
