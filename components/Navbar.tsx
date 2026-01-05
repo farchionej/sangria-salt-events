@@ -33,7 +33,12 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
             item.isButton ? (
-              <Button key={item.label} variant={isScrolled ? 'primary' : 'outline'} className="text-xs px-6 py-2">
+              <Button
+                key={item.label}
+                variant={isScrolled ? 'primary' : 'outline'}
+                className="text-xs px-6 py-2"
+                onClick={() => document.getElementById('inquire')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 {item.label}
               </Button>
             ) : (
@@ -69,7 +74,13 @@ export const Navbar: React.FC = () => {
                   ? 'bg-sangria-900 text-white p-3 text-center'
                   : 'text-stone-300 hover:text-white'
               }`}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                if (item.isButton) {
+                  e.preventDefault();
+                  document.getElementById('inquire')?.scrollIntoView({ behavior: 'smooth' });
+                }
+                setIsMobileMenuOpen(false);
+              }}
             >
               {item.label}
             </a>
