@@ -22,19 +22,19 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 2,
     localSrc: 'hero-slide-2.jpg',
-    fallbackSrc: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop',
+    fallbackSrc: '/hero-slide-2.jpg',
     alt: 'Crowded Event Space'
   },
   {
     id: 3,
     localSrc: 'hero-slide-3.jpg',
-    fallbackSrc: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1920&auto=format&fit=crop',
+    fallbackSrc: '/hero-slide-3.jpg',
     alt: 'Cocktail Detail'
   },
   {
     id: 4,
     localSrc: 'hero-slide-4.jpg',
-    fallbackSrc: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1920&auto=format&fit=crop',
+    fallbackSrc: '/hero-slide-4.jpg',
     alt: 'Interior Architecture'
   },
   {
@@ -51,7 +51,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
     period: '1940S – 1990S',
     title: "The McCarthy's Era",
     description: "The \"Long Bar\" legend begins. Designed to accommodate shift workers and longshoremen, this was a cavernous, gritty institution. It represents the old-school, blue-collar history of the Mission.",
-    image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=600&auto=format&fit=crop',
+    image: '/history-1.jpg',
     localImage: 'history-1.jpg'
   },
   {
@@ -59,7 +59,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
     period: '1997 – 2023',
     title: "The Cha Cha Cha Era",
     description: "The party destination. Famous for being loud, festive, and visually over-stimulated. The high ceilings and open floor plan turned dinner into a celebration.",
-    image: 'https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600&auto=format&fit=crop',
+    image: '/history-2.jpg',
     localImage: 'history-2.jpg'
   },
   {
@@ -79,7 +79,7 @@ export const CAPABILITIES: Capability[] = [
     guests: 'UP TO 250 GUESTS',
     description: 'Break the ice instantly in a venue with 80 years of history. Our open layout and historic energy make mingling easy. Perfect for team milestones and holiday parties.',
     icon: 'users',
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop',
+    image: '/cap-buyout.jpg',
     localImage: 'cap-buyout.jpg'
   },
   {
@@ -121,7 +121,7 @@ export const MENU_IMAGES: Record<string, MenuImageConfig> = {
     secondLocal: 'menu-tapas-2.jpg'
   },
   'BRUNCH': {
-    fallback: 'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?q=80&w=800&auto=format&fit=crop',
+    fallback: '/menu-brunch.jpg',
     local: 'menu-brunch.jpg',
     secondFallback: 'https://images.unsplash.com/photo-1626202167592-31627993f350?q=80&w=800&auto=format&fit=crop',
     secondLocal: 'menu-brunch-2.jpg'
@@ -133,9 +133,9 @@ export const MENU_IMAGES: Record<string, MenuImageConfig> = {
     secondLocal: 'menu-cocktails-2.jpg'
   },
   'WINE LIST': {
-    fallback: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800&auto=format&fit=crop',
+    fallback: '/menu-wine.jpg',
     local: 'menu-wine.jpg',
-    secondFallback: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop',
+    secondFallback: '/menu-wine-2.jpg',
     secondLocal: 'menu-wine-2.jpg'
   }
 };
