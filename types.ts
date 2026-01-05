@@ -39,3 +39,10 @@ export interface MenuImageConfig {
   secondFallback: string;
   secondLocal: string;
 }
+
+export interface HeroSlide {
+  id: number;
+  localSrc: string;
+  fallbackSrc: string;
+  alt: string;
+}

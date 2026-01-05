@@ -1,4 +1,4 @@
-import { HistoryEra, Capability, NavItem, MenuItem, MenuImageConfig } from './types';
+import { HistoryEra, Capability, NavItem, MenuItem, MenuImageConfig, HeroSlide } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'THE HISTORY', href: '#history' },
@@ -11,6 +11,39 @@ export const HERO_IMAGE = {
   fallback: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=1920&auto=format&fit=crop',
   local: 'hero-bg.jpg'
 };
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 1,
+    localSrc: 'hero-slide-1.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Main Bar Atmosphere'
+  },
+  {
+    id: 2,
+    localSrc: 'hero-slide-2.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Crowded Event Space'
+  },
+  {
+    id: 3,
+    localSrc: 'hero-slide-3.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Cocktail Detail'
+  },
+  {
+    id: 4,
+    localSrc: 'hero-slide-4.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Interior Architecture'
+  },
+  {
+    id: 5,
+    localSrc: 'hero-slide-5.jpg',
+    fallbackSrc: 'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=1920&auto=format&fit=crop',
+    alt: 'Celebration Toast'
+  }
+];
 
 export const HISTORY_ERAS: HistoryEra[] = [
   {
