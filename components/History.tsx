@@ -13,7 +13,8 @@ export const History: React.FC = () => {
             <span className="italic text-stone-500">Rent a piece of Mission history.</span>
           </h2>
           <p className="text-lg text-stone-600 leading-relaxed">
-            We've stripped back the clutter to reveal the good bones of the legacy bar and restaurant —specifically the massive 140-foot mahogany bar. We combine the historic grit with chef-driven tapas and elevated service.
+            We've stripped back the clutter to reveal the good bones of the legacy bar and restaurant<br/>
+            —specifically the massive 140-foot mahogany bar. We combine the historic grit with chef-driven tapas and elevated service.
           </p>
         </div>
 
