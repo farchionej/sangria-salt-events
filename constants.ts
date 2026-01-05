@@ -13,36 +13,11 @@ export const HERO_IMAGE = {
 };
 
 export const HERO_SLIDES: HeroSlide[] = [
-  {
-    id: 1,
-    localSrc: 'hero-slide-1.jpg',
-    fallbackSrc: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Main Bar Atmosphere'
-  },
-  {
-    id: 2,
-    localSrc: 'hero-slide-2.jpg',
-    fallbackSrc: '/hero-slide-2.jpg',
-    alt: 'Crowded Event Space'
-  },
-  {
-    id: 3,
-    localSrc: 'hero-slide-3.jpg',
-    fallbackSrc: '/hero-slide-3.jpg',
-    alt: 'Cocktail Detail'
-  },
-  {
-    id: 4,
-    localSrc: 'hero-slide-4.jpg',
-    fallbackSrc: '/hero-slide-4.jpg',
-    alt: 'Interior Architecture'
-  },
-  {
-    id: 5,
-    localSrc: 'hero-slide-5.jpg',
-    fallbackSrc: 'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=1920&auto=format&fit=crop',
-    alt: 'Celebration Toast'
-  }
+  { id: 1, localSrc: 'hero-slide-1.jpg', fallbackSrc: '/hero-slide-1.jpg', alt: 'Main Bar Atmosphere' },
+  { id: 2, localSrc: 'hero-slide-2.jpg', fallbackSrc: '/hero-slide-2.jpg', alt: 'Crowded Event Space' },
+  { id: 3, localSrc: 'hero-slide-3.jpg', fallbackSrc: '/hero-slide-3.jpg', alt: 'Cocktail Detail' },
+  { id: 4, localSrc: 'hero-slide-4.jpg', fallbackSrc: '/hero-slide-4.jpg', alt: 'Interior Architecture' },
+  { id: 5, localSrc: 'hero-slide-5.jpg', fallbackSrc: '/hero-slide-5.jpg', alt: 'Celebration Toast' }
 ];
 
 export const HISTORY_ERAS: HistoryEra[] = [
@@ -67,7 +42,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
     period: '2025',
     title: "Sangria & Salt",
     description: "We've stripped back the clutter to reveal the \"Good Bones\"—specifically the massive 140-foot mahogany bar. We combine the historic grit with chef-driven tapas and elevated service.",
-    image: 'https://images.unsplash.com/photo-1560526860-2934e97cc5dd?q=80&w=600&auto=format&fit=crop',
+    image: '/history-3.jpg',
     localImage: 'history-3.jpg'
   }
 ];
@@ -88,7 +63,7 @@ export const CAPABILITIES: Capability[] = [
     guests: 'SOCIAL DINING',
     description: 'Gather around the famous 140-foot dining counter. It is not just furniture; it is the social engine of the room, encouraging movement unlike any seated dinner.',
     icon: 'wine',
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=800&auto=format&fit=crop',
+    image: '/cap-bar.jpg',
     localImage: 'cap-bar.jpg'
   },
   {
@@ -97,7 +72,7 @@ export const CAPABILITIES: Capability[] = [
     guests: 'SEATED GROUPS',
     description: 'Intimate spaces carved out within the larger venue, perfect for focused conversation while still absorbing the vibrant atmosphere of the main hall.',
     icon: 'utensils',
-    image: 'https://images.unsplash.com/photo-1561585854-46b7201389b7?q=80&w=800&auto=format&fit=crop',
+    image: '/menu-cocktails.jpg',
     localImage: 'menu-cocktails.jpg'
   },
   {
@@ -106,7 +81,7 @@ export const CAPABILITIES: Capability[] = [
     guests: 'COCKTAIL RECEPTIONS',
     description: 'A semi-private area perfect for happy hours and networking. Features plush seating and dedicated service while maintaining connection to the main venue energy.',
     icon: 'wine',
-    image: 'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=800&auto=format&fit=crop',
+    image: '/cap-lounge.jpg',
     localImage: 'cap-lounge.jpg'
   }
 ];
@@ -115,9 +90,9 @@ export const MENU_TABS = ['TAPAS & DINNER', 'BRUNCH', 'COCKTAILS', 'WINE LIST'];
 
 export const MENU_IMAGES: Record<string, MenuImageConfig> = {
   'TAPAS & DINNER': {
-    fallback: 'https://images.unsplash.com/photo-1544025162-d76690b6d015?q=80&w=800&auto=format&fit=crop',
+    fallback: '/menu-tapas.jpg',
     local: 'menu-tapas.jpg',
-    secondFallback: 'https://images.unsplash.com/photo-1536304993881-ff00228b4db1?q=80&w=800&auto=format&fit=crop',
+    secondFallback: '/menu-tapas-2.jpg',
     secondLocal: 'menu-tapas-2.jpg'
   },
   'BRUNCH': {
@@ -127,7 +102,7 @@ export const MENU_IMAGES: Record<string, MenuImageConfig> = {
     secondLocal: 'menu-brunch-2.jpg'
   },
   'COCKTAILS': {
-    fallback: 'https://images.unsplash.com/photo-1561585854-46b7201389b7?q=80&w=800&auto=format&fit=crop',
+    fallback: '/menu-cocktails.jpg',
     local: 'menu-cocktails.jpg',
     secondFallback: 'https://images.unsplash.com/photo-1514362545857-3bc16549766b?q=80&w=800&auto=format&fit=crop',
     secondLocal: 'menu-cocktails-2.jpg'
