@@ -41,7 +41,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
     id: '03',
     period: '2025',
     title: "Sangria & Salt",
-    description: "A bar-forward Caribbean restaurant famous for sangria and tapas. We've revealed the \"Good Bones\" of this historic space—anchored by the massive 140-foot horseshoe bar, one of the longest on the West Coast.",
+    description: "A bar-forward Caribbean restaurant famous for sangria and tapas. We've revealed the original soul of this historic space—anchored by the massive 140-foot horseshoe bar, one of the longest on the West Coast.",
     image: '/history-3.jpg',
     localImage: 'history-3.jpg'
   }
