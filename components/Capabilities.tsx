@@ -1,23 +1,30 @@
 import React from 'react';
 import { CAPABILITIES } from '../constants';
 import { SmartImage } from './SmartImage';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Capabilities: React.FC = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
+
   return (
     <section id="spaces" className="pt-12 pb-12 bg-stone-900 text-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
 
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="font-serif text-4xl md:text-6xl font-bold">Event Capabilities</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {CAPABILITIES.map((cap) => {
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {CAPABILITIES.map((cap, index) => {
             return (
               <div
                 key={cap.id}
                 id={cap.id}
-                className="group relative bg-stone-850 border border-stone-800 hover:border-gold-600/50 transition-colors duration-300 overflow-hidden flex flex-col h-full scroll-mt-32"
+                className={`group relative bg-stone-850 border border-stone-800 hover:border-gold-600/50 transition-all duration-300 overflow-hidden flex flex-col h-full scroll-mt-32 scroll-animate stagger-${index + 1} ${gridVisible ? 'is-visible' : ''}`}
               >
 
                 {/* Image Section - Switched to aspect-[3/4] to support the user's vertical photos */}

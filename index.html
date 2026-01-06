@@ -46,13 +46,63 @@
       html { scroll-behavior: smooth; }
       body { -webkit-font-smoothing: antialiased; }
 
+      /* Base animations */
       @keyframes fade-in {
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
       }
       .animate-fade-in {
-        animation: fade-in 0.4s ease-out;
+        animation: fade-in 0.4s ease-out forwards;
       }
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+
+      @keyframes fade-in-scale {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in-scale {
+        animation: fade-in-scale 0.5s ease-out forwards;
+      }
+
+      /* Animation delays for staggering */
+      .delay-0 { animation-delay: 0ms; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-150 { animation-delay: 150ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+      .delay-450 { animation-delay: 450ms; }
+      .delay-500 { animation-delay: 500ms; }
+      .delay-600 { animation-delay: 600ms; }
+
+      /* Initial state for animated elements (hidden until animation plays) */
+      .animate-on-load {
+        opacity: 0;
+      }
+
+      /* Scroll-triggered animation classes */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .scroll-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Stagger delays for scroll animations */
+      .scroll-animate.stagger-1 { transition-delay: 0ms; }
+      .scroll-animate.stagger-2 { transition-delay: 100ms; }
+      .scroll-animate.stagger-3 { transition-delay: 200ms; }
+      .scroll-animate.stagger-4 { transition-delay: 300ms; }
     </style>
 </head>
   <body>

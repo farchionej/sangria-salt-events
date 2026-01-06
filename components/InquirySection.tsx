@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Replace with your Web3Forms access key from https://web3forms.com/
 const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
@@ -28,6 +29,8 @@ export const InquirySection: React.FC = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -100,7 +103,10 @@ export const InquirySection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
 
           {/* Header */}
-          <div className="text-center mb-16">
+          <div
+            ref={headerRef}
+            className={`text-center mb-16 scroll-animate ${headerVisible ? 'is-visible' : ''}`}
+          >
             <span className="text-gold-500 font-bold tracking-[0.25em] uppercase text-sm mb-4 block">
               Start Planning
             </span>
@@ -114,7 +120,10 @@ export const InquirySection: React.FC = () => {
           </div>
 
           {/* Form Card */}
-          <div className="bg-stone-900/50 backdrop-blur-sm border border-stone-800 p-8 md:p-12 shadow-2xl">
+          <div
+            ref={formRef}
+            className={`bg-stone-900/50 backdrop-blur-sm border border-stone-800 p-8 md:p-12 shadow-2xl scroll-animate stagger-2 ${formVisible ? 'is-visible' : ''}`}
+          >
 
             {status === 'success' ? (
               /* Success State */

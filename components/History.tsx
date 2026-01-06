@@ -1,13 +1,20 @@
 import React from 'react';
 import { HISTORY_ERAS } from '../constants';
 import { SmartImage } from './SmartImage';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const History: React.FC = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
+
   return (
     <section id="history" className="pt-12 pb-12 bg-stone-50 text-stone-900">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="max-w-3xl mb-10">
+        <div
+          ref={headerRef}
+          className={`max-w-3xl mb-10 scroll-animate ${headerVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">
             Don't rent a room. <br/>
             <span className="italic text-stone-500">Rent a piece of Mission history.</span>
@@ -19,9 +26,12 @@ export const History: React.FC = () => {
         </div>
 
         {/* Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-stone-200 pt-10">
-          {HISTORY_ERAS.map((era) => (
-            <div key={era.id} className="group cursor-default">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-stone-200 pt-10">
+          {HISTORY_ERAS.map((era, index) => (
+            <div
+              key={era.id}
+              className={`group cursor-default scroll-animate stagger-${index + 1} ${gridVisible ? 'is-visible' : ''}`}
+            >
                <div className="aspect-[4/3] overflow-hidden mb-8 bg-stone-200">
                   <SmartImage
                     localSrc={era.localImage}

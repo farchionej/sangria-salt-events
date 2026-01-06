@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import { TAPAS_MENU, ENTREES_MENU, MENU_TABS, MENU_IMAGES } from '../constants';
 import { Button } from './Button';
 import { SmartImage } from './SmartImage';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Menu: React.FC = () => {
   const [activeTab, setActiveTab] = useState(MENU_TABS[0]);
   const currentImageConfig = MENU_IMAGES[activeTab];
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
 
   return (
     <section id="menu" className="pt-12 pb-24 bg-stone-100">
       <div className="container mx-auto px-6">
 
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-stone-900 mb-6">Menu Highlights</h2>
 
           {/* Tabs */}

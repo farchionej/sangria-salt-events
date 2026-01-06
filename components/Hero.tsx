@@ -85,22 +85,22 @@ export const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-30 text-center px-4 max-w-4xl mx-auto mt-20 pointer-events-none select-none">
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight pointer-events-auto drop-shadow-2xl">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight pointer-events-auto drop-shadow-2xl animate-on-load animate-fade-in-up">
           Built For <br/>The Buyout.
         </h1>
-        <p className="text-stone-200 text-lg md:text-xl font-light tracking-wide mb-10 max-w-2xl mx-auto pointer-events-auto drop-shadow-lg">
+        <p className="text-stone-200 text-lg md:text-xl font-light tracking-wide mb-10 max-w-2xl mx-auto pointer-events-auto drop-shadow-lg animate-on-load animate-fade-in-up delay-150">
           The ultimate turnkey venue for SF corporate events.
         </p>
 
         {/* Stats */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 mb-12 text-gold-500 font-serif text-xl md:text-2xl italic pointer-events-auto drop-shadow-md">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 mb-12 text-gold-500 font-serif text-xl md:text-2xl italic pointer-events-auto drop-shadow-md animate-on-load animate-fade-in-up delay-300">
           <span>250 Guests</span>
           <span className="hidden md:block w-2 h-2 rounded-full bg-white/30"></span>
           <span>140-Foot Bar</span>
         </div>
 
         {/* Actions */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center pointer-events-auto">
+        <div className="flex flex-col md:flex-row gap-4 justify-center pointer-events-auto animate-on-load animate-fade-in-up delay-450">
           <Button onClick={() => document.getElementById('inquire')?.scrollIntoView({ behavior: 'smooth' })}>INQUIRE</Button>
           <Button variant="outline" onClick={() => document.getElementById('spaces')?.scrollIntoView()}>VIEW SPACES</Button>
         </div>
