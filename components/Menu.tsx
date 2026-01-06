@@ -69,29 +69,28 @@ export const Menu: React.FC = () => {
             {activeTab === 'TAPAS & DINNER' ? (
               <div className="animate-fade-in space-y-16">
 
+                {/* Teaser Images Row */}
+                <div className="grid grid-cols-4 gap-2 mb-10">
+                  <div className="aspect-square overflow-hidden">
+                    <SmartImage localSrc="menu-tapas.jpg" fallbackSrc="/menu-tapas.jpg" alt="Tapas preview 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="aspect-square overflow-hidden">
+                    <SmartImage localSrc="menu-tapas-2.jpg" fallbackSrc="/menu-tapas-2.jpg" alt="Tapas preview 2" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="aspect-square overflow-hidden">
+                    <SmartImage localSrc="menu-cocktails.jpg" fallbackSrc="/menu-cocktails.jpg" alt="Tapas preview 3" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="aspect-square overflow-hidden">
+                    <SmartImage localSrc="menu-brunch.jpg" fallbackSrc="/menu-brunch.jpg" alt="Tapas preview 4" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                  </div>
+                </div>
+
                 {/* Tapas Grid */}
                 <div>
-                  <h3 className="font-serif text-3xl font-bold text-stone-900 mb-6 flex items-center gap-4">
+                  <h3 className="font-serif text-3xl font-bold text-stone-900 mb-8 flex items-center gap-4">
                     <span className="w-8 h-[1px] bg-sangria-900"></span>
                     Tapas Bar
                   </h3>
-
-                  {/* Teaser Images Row */}
-                  <div className="grid grid-cols-4 gap-2 mb-10">
-                    <div className="aspect-square overflow-hidden">
-                      <SmartImage localSrc="menu-tapas.jpg" fallbackSrc="/menu-tapas.jpg" alt="Tapas preview 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="aspect-square overflow-hidden">
-                      <SmartImage localSrc="menu-tapas-2.jpg" fallbackSrc="/menu-tapas-2.jpg" alt="Tapas preview 2" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="aspect-square overflow-hidden">
-                      <SmartImage localSrc="menu-cocktails.jpg" fallbackSrc="/menu-cocktails.jpg" alt="Tapas preview 3" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="aspect-square overflow-hidden">
-                      <SmartImage localSrc="menu-brunch.jpg" fallbackSrc="/menu-brunch.jpg" alt="Tapas preview 4" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-                    </div>
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                     {TAPAS_MENU.map((item) => (
                       <div key={item.name}>
