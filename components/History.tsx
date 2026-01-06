@@ -4,7 +4,7 @@ import { SmartImage } from './SmartImage';
 
 export const History: React.FC = () => {
   return (
-    <section id="history" className="pt-12 pb-24 bg-stone-50 text-stone-900">
+    <section id="history" className="pt-12 pb-12 bg-stone-50 text-stone-900">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl mb-10">
