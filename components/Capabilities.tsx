@@ -4,7 +4,7 @@ import { SmartImage } from './SmartImage';
 
 export const Capabilities: React.FC = () => {
   return (
-    <section id="spaces" className="py-24 bg-stone-900 text-white relative overflow-hidden">
+    <section id="spaces" className="pt-12 pb-24 bg-stone-900 text-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
 
         <div className="text-center mb-16">
